@@ -68,7 +68,7 @@ document.getElementById('icon_left').onclick = function(){
   var config = {
     scheme_IOS: 'sinaweibo://',
     scheme_Adr: 'weixin://',
-    download_url: document.getElementById('down_app').nodeValue,
+    download_url: "https://www.baidu.com",
     timeout: 600
   };
 
@@ -80,13 +80,15 @@ document.getElementById('icon_left').onclick = function(){
     ifr.style.display = 'none';
 
     document.body.appendChild(ifr);
-    alert('ifr' + ifr)
+
     var t = setTimeout(function(){
       var endTime = Date.now();
       if(endTime - startTime > config.timeout + 20){
         document.body.removeChild(ifr);
+        alert('remove')
       }else{
         window.location = config.download_url;
+        alert('window.location')
       }
     }, config.timeout);
 
