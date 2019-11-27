@@ -1,12 +1,10 @@
-document.onload = function(){
+window.onload = function(){
   var openUrl = document.getElementById('down_app')
-  console.log('onload')
   openApp(openUrl, false)
 }
 
 
 function openApp(openUrl, callback) {
-  console.log('openApp')
   //区分是否android和ios方法
   var u = navigator.userAgent, app = navigator.appVersion;
   var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
