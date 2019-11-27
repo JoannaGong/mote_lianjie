@@ -68,7 +68,7 @@ document.getElementById('icon_left').onclick = function(){
   var config = {
     scheme_IOS: 'sinaweibo://',
     scheme_Adr: 'weixin://',
-    download_url: "https://www.baidu.com",
+    download_url: document.getElementById('call_app').nodeValue,
     timeout: 600
   };
 
@@ -85,10 +85,8 @@ document.getElementById('icon_left').onclick = function(){
       var endTime = Date.now();
       if(endTime - startTime > config.timeout + 20){
         document.body.removeChild(ifr);
-        alert('remove')
       }else{
-        window.location = config.download_url;
-        alert('window.location')
+        // window.location = config.download_url;
       }
     }, config.timeout);
 
@@ -103,19 +101,3 @@ document.getElementById('icon_left').onclick = function(){
 
 })()
 
-
-// var u = navigator.userAgent,
-// app = navigator.appVersion;
-
-// var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1;  // 安卓终端或者uc浏览器
-// var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);   //ios终端
-
-// alert('是否是iOS：' + isiOS);
-
-// if(isAndroid){
-//   alert('是Android：' + isAndroid);
-// }
-
-// if(isiOS ){
-//   alert('是isiOS ：' + isiOS );
-// }
