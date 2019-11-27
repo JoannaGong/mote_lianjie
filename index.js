@@ -102,18 +102,18 @@ document.getElementById('icon_left').onclick = function(){
 })()
 
 
-var u = navigator.userAgent,
-app = navigator.appVersion;
+// var u = navigator.userAgent,
+// app = navigator.appVersion;
 
-var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1;  // 安卓终端或者uc浏览器
-var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);   //ios终端
+// var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1;  // 安卓终端或者uc浏览器
+// var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);   //ios终端
 
-alert('是否是iOS：' + isiOS);
+// alert('是否是iOS：' + isiOS);
 
-if(isAndroid){
-  alert('是Android：' + isAndroid);
-}
+// if(isAndroid){
+//   alert('是Android：' + isAndroid);
+// }
 
-if(isiOS ){
-  alert('是isiOS ：' + isiOS );
-}
+// if(isiOS ){
+//   alert('是isiOS ：' + isiOS );
+// }

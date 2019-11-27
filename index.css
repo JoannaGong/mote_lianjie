@@ -90,3 +90,8 @@ body {
   border-radius: 20px;
   margin-left: 26%;
 }
+
+#down_app {
+  text-decoration: none;
+  color: white;
+}
