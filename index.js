@@ -80,7 +80,7 @@ document.getElementById('icon_left').onclick = function(){
     ifr.style.display = 'none';
 
     document.body.appendChild(ifr);
-
+    alert('ifr' + ifr)
     var t = setTimeout(function(){
       var endTime = Date.now();
       if(endTime - startTime > config.timeout + 20){
@@ -96,7 +96,7 @@ document.getElementById('icon_left').onclick = function(){
   }
 
   window.addEventListener('DOMContentLoaded', function(){
-    document.getElementById('open_app').addEventListener('click', openclient, false)
+    document.getElementById('down_app').addEventListener('click', openclient, false)
   }, false)
 
 })()
