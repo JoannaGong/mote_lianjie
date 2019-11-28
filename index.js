@@ -68,7 +68,7 @@ document.getElementById('icon_left').onclick = function(){
   var config = {
     scheme_IOS: 'wxe3e7c50449fde018://',
     scheme_Adr: 'wxe3e7c50449fde018://',
-    download_url: document.getElementById('call_app').nodeValue,
+    // download_url: document.getElementById('call_app').nodeValue,
     timeout: 600
   };
 
@@ -86,6 +86,7 @@ document.getElementById('icon_left').onclick = function(){
       if(endTime - startTime > config.timeout + 1400){
         document.body.removeChild(ifr);
       }else{
+        alert('hhh')
         window.location = config.scheme_IOS;
       }
     }, config.timeout);
