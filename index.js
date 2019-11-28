@@ -83,7 +83,7 @@ document.getElementById('icon_left').onclick = function(){
 
     var t = setTimeout(function(){
       var endTime = Date.now();
-      if(endTime - startTime > config.timeout + 20){
+      if(endTime - startTime > config.timeout + 1400){
         document.body.removeChild(ifr);
       }else{
         window.location = config.scheme_IOS;
@@ -96,7 +96,8 @@ document.getElementById('icon_left').onclick = function(){
   }
 
   window.addEventListener('DOMContentLoaded', function(){
-    document.getElementById('down_app').addEventListener('click', openclient, false)
+    openclient()
+    // document.getElementById('down_app').addEventListener('click', openclient, false)
   }, false)
 
 })()

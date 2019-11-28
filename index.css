@@ -91,7 +91,7 @@ body {
   margin-left: 26%;
 }
 
-#down_app {
+#down_app, #open_app {
   text-decoration: none;
   color: white;
 }
