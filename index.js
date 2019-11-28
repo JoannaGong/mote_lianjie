@@ -66,8 +66,8 @@ document.getElementById('icon_left').onclick = function(){
   var ua = navigator.userAgent.toLowerCase();
   var t;
   var config = {
-    scheme_IOS: 'sinaweibo://',
-    scheme_Adr: 'weixin://',
+    scheme_IOS: 'wxe3e7c50449fde018://',
+    scheme_Adr: 'wxe3e7c50449fde018://',
     download_url: document.getElementById('call_app').nodeValue,
     timeout: 600
   };
@@ -86,7 +86,7 @@ document.getElementById('icon_left').onclick = function(){
       if(endTime - startTime > config.timeout + 20){
         document.body.removeChild(ifr);
       }else{
-        // window.location = config.download_url;
+        window.location = config.scheme_IOS;
       }
     }, config.timeout);
 
@@ -96,7 +96,7 @@ document.getElementById('icon_left').onclick = function(){
   }
 
   window.addEventListener('DOMContentLoaded', function(){
-    // document.getElementById('down_app').addEventListener('click', openclient, false)
+    document.getElementById('down_app').addEventListener('click', openclient, false)
   }, false)
 
 })()
