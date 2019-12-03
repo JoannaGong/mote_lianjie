@@ -67,7 +67,7 @@ document.getElementById('icon_left').onclick = function(){
   var t;
   var config = {
     scheme_IOS: 'wxe3e7c50449fde018://',
-    scheme_Adr: 'https://model-back.xinghaotian.cn/yiyue.apk',
+    scheme_Adr: '',  // https://model-back.xinghaotian.cn/yiyue.apk
     // download_url: document.getElementById('call_app').nodeValue,
     timeout: 600
   };
