@@ -11,10 +11,10 @@
 //   var isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
 
 //   if (isAndroid) {
-//     openUrl = 'sinaweibo://'
+//     openUrl = 'https://model-back.xinghaotian.cn/yiyue.apk'
 //   } else if (isIos) {
-//     // window.location.href = 'weixin://';
-//     openUrl = 'https://www.baidu.com'
+//     // window.location.href = 'wxe3e7c50449fde018://';
+//     openUrl = 'wxe3e7c50449fde018://'
 //   }
 //   //检查app是否打开
 //   function checkOpen(cb) {
@@ -67,7 +67,7 @@ document.getElementById('icon_left').onclick = function(){
   var t;
   var config = {
     scheme_IOS: 'wxe3e7c50449fde018://',
-    scheme_Adr: 'wxe3e7c50449fde018://',
+    scheme_Adr: 'https://model-back.xinghaotian.cn/yiyue.apk',
     // download_url: document.getElementById('call_app').nodeValue,
     timeout: 600
   };
@@ -83,10 +83,9 @@ document.getElementById('icon_left').onclick = function(){
 
     var t = setTimeout(function(){
       var endTime = Date.now();
-      if(endTime - startTime > config.timeout + 1400){
+      if(endTime - startTime > config.timeout + 200){
         document.body.removeChild(ifr);
       }else{
-        alert('hhh')
         window.location = config.scheme_IOS;
       }
     }, config.timeout);
@@ -97,8 +96,8 @@ document.getElementById('icon_left').onclick = function(){
   }
 
   window.addEventListener('DOMContentLoaded', function(){
-    openclient()
-    // document.getElementById('down_app').addEventListener('click', openclient, false)
+    openclient()   // 自动打开app
+    document.getElementById('down_app').addEventListener('click', openclient, false)
   }, false)
 
 })()
