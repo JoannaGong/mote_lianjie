@@ -85,8 +85,8 @@ document.getElementById('icon_left').onclick = function(){
       if(endTime - startTime > config.timeout + 20){
         document.body.removeChild(ifr);
       }else{
-        // window.location = ifr.src;
-        alert(ifr.src)
+        window.location = ifr.src;
+        // alert(ifr.src)
       }
     }, config.timeout);
 
