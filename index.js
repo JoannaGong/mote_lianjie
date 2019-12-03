@@ -68,7 +68,6 @@ document.getElementById('icon_left').onclick = function(){
   var config = {
     scheme_IOS: 'wxe3e7c50449fde018://',
     scheme_Adr: '',  // https://model-back.xinghaotian.cn/yiyue.apk
-    // download_url: document.getElementById('call_app').nodeValue,
     timeout: 600
   };
 
@@ -94,6 +93,38 @@ document.getElementById('icon_left').onclick = function(){
       this.clearTimeout(t);
     }
   }
+
+  //检查app是否打开
+  function checkOpen(cb) {
+    var _clickTime = +(new Date());
+    function check(elsTime) {
+      if (elsTime > 3000 || document.hidden || document.webkitHidden) {
+        cb(1);
+      } else {
+        cb(0);
+      }
+    }
+    //启动间隔20ms运行的定时器，并检测累计消耗时间是否超过3000ms，超过则结束
+    var _count = 0, intHandle;
+    intHandle = setInterval(function () {
+      _count++;
+      var elsTime = +(new Date()) - _clickTime;
+      if (_count >= 100 || elsTime > 3000) {
+        clearInterval(intHandle);
+        check(elsTime);
+      }
+    }, 20);
+  }
+
+  checkOpen(function (opened) {//checkOpen中的cbk参数 = function (opened)
+    if (opened == 0) {
+      //用户没有安装app 可以请求下载地址并跳转 跳转方法：window.location.href 即可
+      window.location = ua.indexOf('os') > 0 ? config.scheme_IOS : config.scheme_Adr;
+    } else if (opened == 1) {
+      //用户打开了app  用户有安装app 
+      alert('installed')
+    }
+  });
 
   window.addEventListener('DOMContentLoaded', function(){
     openclient()   // 自动打开app
