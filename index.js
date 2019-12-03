@@ -67,38 +67,65 @@ document.getElementById('icon_left').onclick = function(){
   var t;
   var config = {
     scheme_IOS: 'wxe3e7c50449fde018://',
-    scheme_Adr: 'https://model-back.xinghaotian.cn/yiyue.apk',  // https://model-back.xinghaotian.cn/yiyue.apk
+    scheme_Adr: 'wxe3e7c50449fde018://',  // https://model-back.xinghaotian.cn/yiyue.apk
     timeout: 1000
   };
 
-  function openclient(){
-    var startTime = Date.now();
-    var ifr = document.createElement('iframe');
+  // function openclient(){
+  //   var startTime = Date.now();
+  //   var ifr = document.createElement('iframe');
 
-    ifr.src = ua.indexOf('os') > 0 ? config.scheme_IOS : config.scheme_Adr;
-    ifr.style.display = 'none';
+  //   ifr.src = ua.indexOf('os') > 0 ? config.scheme_IOS : config.scheme_Adr;
+  //   ifr.style.display = 'none';
 
-    document.body.appendChild(ifr);
+  //   document.body.appendChild(ifr);
 
-    var t = setTimeout(function(){
-      var endTime = Date.now();
-      if(endTime - startTime > config.timeout + 1200){
+  //   var t = setTimeout(function(){
+  //     var endTime = Date.now();
+  //     if(endTime - startTime > config.timeout + 1200){
+  //       document.body.removeChild(ifr);
+  //     }else{
+  //       window.location = ifr.src;
+  //     }
+  //   }, config.timeout);
+
+  //   window.onblur = function(){
+  //     this.clearTimeout(t);
+  //   }
+  // }
+
+  function testApp() {
+    var timeout, t = 1000, hasApp = true;
+    var url = ua.indexOf('os') > 0 ? config.scheme_IOS : config.scheme_Adr;
+    setTimeout(function () {
+        if (hasApp) {
+            alert('安装了app');
+        } else {
+            alert('未安装app');
+        }
         document.body.removeChild(ifr);
-        alert('安装了')
-      }else{  // 没安装
-        window.location = ifr.src;
-        alert('没安装')
-      }
-    }, config.timeout);
+    }, 2000)
+
+    var t1 = Date.now();
+    var ifr = document.createElement("iframe");
+    ifr.setAttribute('src', url);
+    ifr.setAttribute('style', 'display:none');
+    document.body.appendChild(ifr);
+    timeout = setTimeout(function () {
+         var t2 = Date.now();
+         if (!t1 || t2 - t1 < t + 100) {
+             hasApp = false;
+         }
+    }, t);
 
     window.onblur = function(){
-      this.clearTimeout(t);
+      this.clearTimeout(timeout);
     }
   }
 
   window.addEventListener('DOMContentLoaded', function(){
-    openclient()   // 自动打开app
-    document.getElementById('down_app').addEventListener('click', openclient, false)
+    testApp()   // 自动打开app
+    document.getElementById('down_app').addEventListener('click', testApp, false)
   }, false)
 
 })()
