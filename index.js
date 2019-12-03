@@ -68,7 +68,7 @@ document.getElementById('icon_left').onclick = function(){
   var config = {
     scheme_IOS: 'wxe3e7c50449fde018://',
     scheme_Adr: 'https://model-back.xinghaotian.cn/yiyue.apk',  // https://model-back.xinghaotian.cn/yiyue.apk
-    timeout: 600
+    timeout: 1000
   };
 
   function openclient(){
@@ -82,7 +82,7 @@ document.getElementById('icon_left').onclick = function(){
 
     var t = setTimeout(function(){
       var endTime = Date.now();
-      if(endTime - startTime > config.timeout + 200){
+      if(endTime - startTime > config.timeout + 1200){
         document.body.removeChild(ifr);
         alert('安装了')
       }else{  // 没安装
