@@ -15,9 +15,10 @@
     var t = setTimeout(function(){
       var endTime = Date.now();
       if(endTime - startTime > 20){
+        alert('hhh')
         document.body.removeChild(ifr);
       }else{
-        window.location = open_app_url;
+        window.location = 'wx://';
       }
     }, 600);
 
