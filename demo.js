@@ -15,13 +15,12 @@ $(function () {
 });
 
 // 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为
-window.addEventListener('DOMContentLoaded', function(){
+alert('aaa')
   var ifr = document.createElement('iframe');
   ifr.src = 'weixin://';
   ifr.style.display = 'none'
   document.body.appendChild(ifr);
   alert('hhh')
-}, true)
 
 // 否则打开a标签的href链接
 function openApp(src) {
