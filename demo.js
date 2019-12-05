@@ -1,6 +1,1 @@
-var a = window.open('https://model-back.xinghaotian.cn/yiyue.apk', '_blank')
-if(a){
-  console.log('true')
-}else{
-  console.log('false')
-}
+window.location = "wxe3e7c50449fde018://";

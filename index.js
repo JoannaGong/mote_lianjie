@@ -19,7 +19,7 @@
         state = window.open("wxe3e7c50449fde018://", '_blank');
       } catch (e) { }
       if (state) {
-        alert('aa')
+        // alert('aa')
         // window.close();
       } else {
         alert('bb')
