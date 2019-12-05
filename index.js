@@ -19,6 +19,7 @@ function init(){
 
   document.getElementById('down_app').href = download_url;
 }
+init()
 
 (function(){
   function openclient(){
