@@ -5,27 +5,25 @@
 
   function openclient(){
     var startTime = Date.now();
-    // var ifr = document.createElement('iframe');
+    var ifr = document.createElement('iframe');
 
-    // ifr.src = open_app_url;
-    // // ifr.style.display = 'none';
-    // document.getElementById('go_app').style.display = 'none'
+    ifr.src = open_app_url;
+    ifr.style.display = 'none';
 
-    // document.body.appendChild(ifr);
+    document.body.appendChild(ifr);
 
-    // var t = setTimeout(function(){
-    //   var endTime = Date.now();
-    //   if(endTime - startTime > 1000){
-    //     document.body.removeChild(ifr);
-    //   }else{
-    //     // alert('hhh')
+    var t = setTimeout(function(){
+      var endTime = Date.now();
+      if(endTime - startTime > 1000){
+        document.body.removeChild(ifr);
+      }else{
         window.location = open_app_url;
-    //   }
-    // }, 1000);
+      }
+    }, 1000);
 
-    // window.onblur = function(){
-    //   this.clearTimeout(t);
-    // }
+    window.onblur = function(){
+      this.clearTimeout(t);
+    }
   }
 
   window.addEventListener('DOMContentLoaded', function(){
