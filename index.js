@@ -6,20 +6,17 @@ var open_app_url = 'wxe3e7c50449fde018://';
 var download_url;
 
 function init(){
-  switch(app){
-    case isWeixin:
-      break;
-    case isAndroid:
-      download_url = 'https://model-back.xinghaotian.cn/yiyue.apk';
-      break;
-    case isIos:
-      download_url = "https://apps.apple.com/cn/app/%E8%89%BA%E7%BA%A6/id1485342529?ign-mpt=uo%3D4";
-      break;
+  if(isWeixin === -1){
+
+  }else if(isAndroid === -1){
+    download_url = 'https://model-back.xinghaotian.cn/yiyue.apk';
+  }else if(isIos === -1){
+    download_url = "https://apps.apple.com/cn/app/%E8%89%BA%E7%BA%A6/id1485342529?ign-mpt=uo%3D4";
   }
 
   document.getElementById('down_app').href = download_url;
 }
-init()
+init();
 
 (function(){
   function openclient(){
