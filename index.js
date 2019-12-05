@@ -21,7 +21,7 @@ var download_url;
       if(endTime - startTime > 1000){
         document.body.removeChild(ifr);
       }else{
-        window.location = download_url;
+        window.location = open_app_url;
       }
     }, 1000);
 
@@ -38,7 +38,6 @@ var download_url;
     }else if(isIos){
       download_url = "https://apps.apple.com/cn/app/%E8%89%BA%E7%BA%A6/id1485342529?ign-mpt=uo%3D4";
     }
-    // window.location.href = download_url
     document.getElementById('down_app').href = download_url;
   }
 
