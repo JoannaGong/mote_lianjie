@@ -13,7 +13,7 @@ var t0 = d.getTime();
     document.body.appendChild(ifr);
     window.setTimeout(function(){
       document.body.removeChild(ifr);
-      //  window.location.href = "weixin://"; /***下载app的地址***/
+       window.location.href = "https://apps.apple.com/cn/app/%E8%89%BA%E7%BA%A6/id1485342529?ign-mpt=uo%3D4"; /***下载app的地址***/
     },2000)
   })();
 // }
