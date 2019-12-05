@@ -73,19 +73,19 @@
 
     document.body.appendChild(ifr);
 
-    var t = setTimeout(function(){
-      var endTime = Date.now();
-      if(endTime - startTime > 1000){
-        document.body.removeChild(ifr);
-      }else{
-        // alert('hhh')
-        // window.location = ifr.src;
-      }
-    }, 1000);
+    // var t = setTimeout(function(){
+    //   var endTime = Date.now();
+    //   if(endTime - startTime > 1000){
+    //     document.body.removeChild(ifr);
+    //   }else{
+    //     // alert('hhh')
+    //     // window.location = ifr.src;
+    //   }
+    // }, 1000);
 
-    window.onblur = function(){
-      this.clearTimeout(t);
-    }
+    // window.onblur = function(){
+    //   this.clearTimeout(t);
+    // }
   }
 
   window.addEventListener('DOMContentLoaded', function(){
