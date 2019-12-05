@@ -13,10 +13,10 @@ function init(){
   }else if(isIos === -1){
     download_url = "https://apps.apple.com/cn/app/%E8%89%BA%E7%BA%A6/id1485342529?ign-mpt=uo%3D4";
   }
-
-  document.getElementById('down_app').href = download_url;
+  
+  window.location.href = download_url
+  // document.getElementById('down_app').href = download_url;
 }
-init();
 
 (function(){
   function openclient(){
@@ -43,7 +43,7 @@ init();
 
   window.addEventListener('DOMContentLoaded', function(){
     openclient()   // 自动打开app
-    document.getElementById('down_app').addEventListener('click', openclient, false)
+    document.getElementById('down_app').addEventListener('click', init, false)
   }, false)
 
 })()
