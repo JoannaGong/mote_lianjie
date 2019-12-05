@@ -14,24 +14,12 @@ $(function () {
   }
 });
 
-//跳转下载
-// 安卓 // openApp("安卓下载链接");
-$(".a-btn").click(function () {
-  openApp("https://model-back.xinghaotian.cn/yiyue.apk");
-});
-
-// 苹果 // openApp("IOS App Store下载链接");
-$(".i-btn").click(function () {
-  openApp("https://apps.apple.com/cn/app/%E8%89%BA%E7%BA%A6/id1485342529?ign-mpt=uo%3D4");
-});
-
 // 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为
 window.addEventListener('DOMContentLoaded', function(){
   var ifr = document.createElement('iframe');
   ifr.src = 'weixin://';
   ifr.style.display = 'none'
   document.body.appendChild(ifr);
-  openApp('https://apps.apple.com/cn/app/%E8%89%BA%E7%BA%A6/id1485342529?ign-mpt=uo%3D4')
 }, false)
 
 // 否则打开a标签的href链接
