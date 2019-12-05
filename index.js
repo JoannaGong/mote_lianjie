@@ -5,18 +5,7 @@ var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
 var open_app_url = 'wxe3e7c50449fde018://';
 var download_url;
 
-function init(){
-  if(isWeixin === -1){
 
-  }else if(isAndroid === -1){
-    download_url = 'https://model-back.xinghaotian.cn/yiyue.apk';
-  }else if(isIos === -1){
-    download_url = "https://apps.apple.com/cn/app/%E8%89%BA%E7%BA%A6/id1485342529?ign-mpt=uo%3D4";
-  }
-  
-  window.location.href = download_url
-  // document.getElementById('down_app').href = download_url;
-}
 
 (function(){
   function openclient(){
@@ -39,6 +28,18 @@ function init(){
     window.onblur = function(){
       this.clearTimeout(t);
     }
+  }
+
+  function init(){
+    if(isWeixin){
+  
+    }else if(isAndroid){
+      download_url = 'https://model-back.xinghaotian.cn/yiyue.apk';
+    }else if(isIos){
+      download_url = "https://apps.apple.com/cn/app/%E8%89%BA%E7%BA%A6/id1485342529?ign-mpt=uo%3D4";
+    }
+    // window.location.href = download_url
+    document.getElementById('down_app').href = download_url;
   }
 
   window.addEventListener('DOMContentLoaded', function(){
