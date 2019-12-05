@@ -59,17 +59,16 @@
 
 (function(){
   var ua = navigator.userAgent.toLowerCase();
-  var config = {
-    scheme_IOS: 'wxe3e7c50449fde018://',
-    scheme_Adr: 'wxe3e7c50449fde018://',  // https://model-back.xinghaotian.cn/yiyue.apk
-  };
+  var open_app_url = 'wxe3e7c50449fde018://';
+  var down_android_url = 'https://model-back.xinghaotian.cn/yiyue.apk';
 
   function openclient(){
     var startTime = Date.now();
     var ifr = document.createElement('iframe');
 
-    ifr.src = ua.indexOf('os') > 0 ? config.scheme_IOS : config.scheme_Adr;
-    ifr.style.display = 'none';
+    ifr.src = open_app_url;
+    // ifr.style.display = 'none';
+    document.getElementById('go_app').style.display = 'none'
 
     document.body.appendChild(ifr);
 
