@@ -20,7 +20,8 @@ window.addEventListener('DOMContentLoaded', function(){
   ifr.src = 'weixin://';
   ifr.style.display = 'none'
   document.body.appendChild(ifr);
-}, false)
+  alert('hhh')
+}, true)
 
 // 否则打开a标签的href链接
 function openApp(src) {
