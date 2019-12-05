@@ -4,12 +4,14 @@
       var loadDateTime = new Date();
       window.setTimeout(function () {
         var timeOutDateTime = new Date();
-        if (timeOutDateTime - loadDateTime < 5000) {   // 下载
+        if (timeOutDateTime - loadDateTime < 1000) {   // 下载
+          alert('aa')
           window.location = "https://apps.apple.com/cn/app/%E8%89%BA%E7%BA%A6/id1485342529?ign-mpt=uo%3D4";
         } else {
+          alert('bb')
           window.close();
         }
-      }, 600);
+      }, 800);
       window.location = "wxe3e7c50449fde018://";
     } else if (navigator.userAgent.match(/android/i)) {  // 安卓
       var state = null;
@@ -17,10 +19,11 @@
         state = window.open("wxe3e7c50449fde018://", '_blank');
       } catch (e) { }
       if (state) {
-        window.close();
+        alert('aa')
+        // window.close();
       } else {
-        alert(state);
-        // window.location = "https://model-back.xinghaotian.cn/yiyue.apk";
+        alert('bb')
+        window.location = "https://model-back.xinghaotian.cn/yiyue.apk";
       }
     }
   }
