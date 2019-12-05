@@ -57,18 +57,12 @@
 // }
 
 
-
-document.getElementById('icon_left').onclick = function(){
-  document.getElementById('go_app').style.display = 'none';
-};
-
 (function(){
   var ua = navigator.userAgent.toLowerCase();
   var t;
   var config = {
     scheme_IOS: 'wxe3e7c50449fde018://',
     scheme_Adr: 'wxe3e7c50449fde018://',  // https://model-back.xinghaotian.cn/yiyue.apk
-    timeout: 600
   };
 
   function openclient(){
@@ -82,47 +76,18 @@ document.getElementById('icon_left').onclick = function(){
 
     var t = setTimeout(function(){
       var endTime = Date.now();
-      if(endTime - startTime > config.timeout + 20){
+      if(endTime - startTime > config.timeout + 1000){
         document.body.removeChild(ifr);
       }else{
         window.location = ifr.src;
         // alert(ifr.src)
       }
-    }, config.timeout);
+    }, 500);
 
     window.onblur = function(){
       this.clearTimeout(t);
     }
   }
-
-  // function testApp() {
-  //   var timeout, t = 1000, hasApp = true;
-  //   var url = ua.indexOf('os') > 0 ? config.scheme_IOS : config.scheme_Adr;
-  //   setTimeout(function () {
-  //       if (hasApp) {
-  //           alert('安装了app');
-  //       } else {
-  //           alert('未安装app');
-  //       }
-  //       document.body.removeChild(ifr);
-  //   }, 2000)
-
-  //   var t1 = Date.now();
-  //   var ifr = document.createElement("iframe");
-  //   ifr.setAttribute('src', url);
-  //   ifr.setAttribute('style', 'display:none');
-  //   document.body.appendChild(ifr);
-  //   timeout = setTimeout(function () {
-  //        var t2 = Date.now();
-  //        if (!t1 || t2 - t1 < t + 100) {
-  //            hasApp = false;
-  //        }
-  //   }, t);
-
-  //   window.onblur = function(){
-  //     this.clearTimeout(timeout);
-  //   }
-  // }
 
   window.addEventListener('DOMContentLoaded', function(){
     openclient()   // 自动打开app
