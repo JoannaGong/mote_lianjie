@@ -17,7 +17,7 @@
       if(endTime - startTime > 620){
         document.body.removeChild(ifr);
       }else{
-        window.location = 'wx://';
+        window.location = 'wxe3e7c50449fde018://';
       }
     }, 600);
 
