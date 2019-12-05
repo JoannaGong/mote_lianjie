@@ -14,12 +14,12 @@
 
     var t = setTimeout(function(){
       var endTime = Date.now();
-      if(endTime - startTime > 1000){
+      if(endTime - startTime > 20){
         document.body.removeChild(ifr);
       }else{
         window.location = open_app_url;
       }
-    }, 1000);
+    }, 600);
 
     window.onblur = function(){
       this.clearTimeout(t);
