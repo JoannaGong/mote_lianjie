@@ -14,8 +14,7 @@
 
     var t = setTimeout(function(){
       var endTime = Date.now();
-      if(endTime - startTime > 20){
-        alert('hhh')
+      if(endTime - startTime > 620){
         document.body.removeChild(ifr);
       }else{
         window.location = 'wx://';
