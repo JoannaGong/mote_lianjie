@@ -59,7 +59,6 @@
 
 (function(){
   var ua = navigator.userAgent.toLowerCase();
-  var t;
   var config = {
     scheme_IOS: 'wxe3e7c50449fde018://',
     scheme_Adr: 'wxe3e7c50449fde018://',  // https://model-back.xinghaotian.cn/yiyue.apk
@@ -76,13 +75,13 @@
 
     var t = setTimeout(function(){
       var endTime = Date.now();
-      if(endTime - startTime > config.timeout + 1000){
+      if(endTime - startTime > 1000){
         document.body.removeChild(ifr);
       }else{
-        window.location = ifr.src;
-        // alert(ifr.src)
+        // alert('hhh')
+        // window.location = ifr.src;
       }
-    }, 500);
+    }, 1000);
 
     window.onblur = function(){
       this.clearTimeout(t);
