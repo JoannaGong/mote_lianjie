@@ -7,8 +7,7 @@ if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {  // 苹果
     } else {
       window.close();
     }
-  },
-    25);
+  }, 600);
   window.location = "wxe3e7c50449fde018://";
 } else if (navigator.userAgent.match(/android/i)) {  // 安卓
   var state = null;
