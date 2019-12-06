@@ -75,6 +75,9 @@ body {
 .qcode img {
   width: 30%;
   margin: 8.5vh 0;
+  border-radius: 8px;
+  border: 4px solid white;
+  box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .btn {
@@ -92,6 +95,8 @@ body {
 }
 
 #down_app, #open_app {
+  display: block;
+  cursor: pointer;
   text-decoration: none;
   color: white;
 }

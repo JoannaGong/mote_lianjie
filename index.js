@@ -5,7 +5,7 @@ var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
 var open_app_url = 'wxe3e7c50449fde018://';
 var download_url;
 
-
+document.title = '艺约链接'
 
 (function(){
   function openclient(){
@@ -31,9 +31,6 @@ var download_url;
   }
 
   function init(){
-    // if(isWeixin){
-  
-    // }else 
     if(isAndroid){
       download_url = 'https://model-back.xinghaotian.cn/yiyue.apk';
     }else if(isIos){
