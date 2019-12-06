@@ -21,14 +21,14 @@ function setTitle(title){
 
 
 (function(){
+  if(isAndroid){
+    download_url = 'https://model-back.xinghaotian.cn/yiyue.apk';
+  }else if(isIos){
+    download_url = "https://apps.apple.com/cn/app/%E8%89%BA%E7%BA%A6/id1485342529?ign-mpt=uo%3D4";
+  }
+
   function openclient(){
     var startTime = Date.now();
-    // var ifr = document.createElement('iframe');
-
-    // ifr.src = open_app_url;
-    // ifr.style.display = 'none';
-    // document.body.appendChild(ifr);
-
     var aLink = document.createElement('a');
     aLink.href = open_app_url;
     document.body.appendChild(aLink);
@@ -39,7 +39,7 @@ function setTitle(title){
       if(endTime - startTime > 800){
         document.body.removeChild(aLink);
       }else{
-        window.location = open_app_url;
+        window.location = download_url;
       }
     }, 600);
 
@@ -48,18 +48,11 @@ function setTitle(title){
     }
   }
 
-  function init(){
-    if(isAndroid){
-      download_url = 'https://model-back.xinghaotian.cn/yiyue.apk';
-    }else if(isIos){
-      download_url = "https://apps.apple.com/cn/app/%E8%89%BA%E7%BA%A6/id1485342529?ign-mpt=uo%3D4";
-    }
-    document.getElementById('down_app').href = download_url;
-  }
-
   window.addEventListener('DOMContentLoaded', function(){
     openclient()   // 自动打开app
-    document.getElementById('down_app').addEventListener('click', init, false)
+    document.getElementById('down_app').addEventListener('click', function(){
+      document.getElementById('down_app').href = download_url;
+    }, false)
   }, false)
 
 })()
