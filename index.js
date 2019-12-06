@@ -45,6 +45,7 @@ function setTitle(title){
     }, 600);
 
     window.onblur = function(){
+      alert('aaa')
       this.clearTimeout(t);
     }
   }
