@@ -5,17 +5,24 @@ var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
 var open_app_url = 'wxe3e7c50449fde018://';
 var download_url;
 
-setTitle()
+setTimeout(function(){
+  setTitle('艺约链接')
+}, 200);
 
-function setTitle(){
-  var $body = $('body');
-  document.title = 'the title you want to set';
-  var $iframe = $("<iframe style='display:none;' src='/favicon.ico'></iframe>");
-  $iframe.on('load',function() {
-    setTimeout(function() {
-      $iframe.off('load').remove();
-    }, 0);
-  }).appendTo($body);
+
+function setTitle(title){
+  document.title = title || document.title;
+  var ua = navigator.userAgent.toLowerCase();
+  if(ua.match(/MicroMessenger/i)=="micromessenger" && !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/i)){
+      var ifr = document.createElement('iframe')
+      ifr.src = "/favicon.ico";
+      ifr.onload = function() {
+        setTimeout(function(){
+          ifr.remove();
+        }, 0)
+      }
+      document.body.appendChild(ifr);
+  }
 }
 
 
