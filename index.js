@@ -1,6 +1,8 @@
 var ua = navigator.userAgent.toLowerCase();
 var isWeixin = ua.indexOf('micromessenger') != -1;
 var isAndroid = ua.indexOf('android') != -1;
+var isWeibo = ua.indexOf('weibo') != -1;
+var isQq = ua.indexOf('QQ') != -1;
 var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
 var open_app_url = 'wxe3e7c50449fde018://';
 var download_url;
@@ -49,10 +51,7 @@ function setTitle(title){
   }
 
   window.addEventListener('DOMContentLoaded', function(){
-    openclient()   // 自动打开app
-    document.getElementById('open_app').addEventListener('click', function(){
-      document.getElementById('open_app').href = open_app_url;
-    }, false)
+    // openclient()   // 自动打开app
     document.getElementById('down_app').addEventListener('click', function(){
       document.getElementById('down_app').href = download_url;
     }, false)
