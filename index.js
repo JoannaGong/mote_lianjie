@@ -5,7 +5,19 @@ var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
 var open_app_url = 'wxe3e7c50449fde018://';
 var download_url;
 
-document.title = '艺约链接'
+setTitle()
+
+function setTitle(){
+  var $body = $('body');
+  document.title = 'the title you want to set';
+  var $iframe = $("<iframe style='display:none;' src='/favicon.ico'></iframe>");
+  $iframe.on('load',function() {
+    setTimeout(function() {
+      $iframe.off('load').remove();
+    }, 0);
+  }).appendTo($body);
+}
+
 
 (function(){
   function openclient(){
