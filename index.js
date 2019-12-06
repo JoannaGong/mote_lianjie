@@ -39,13 +39,11 @@ function setTitle(title){
       if(endTime - startTime > 800){
         document.body.removeChild(aLink);
       }else{
-        // window.location = download_url;
-        // alert('hhh')
+        window.location = download_url;
       }
     }, 600);
 
     window.onblur = function(){
-      alert('aaa')
       this.clearTimeout(t);
     }
   }
