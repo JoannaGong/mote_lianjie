@@ -36,7 +36,7 @@ function setTitle(title){
 
     var t = setTimeout(function(){
       var endTime = Date.now();
-      if(endTime - startTime > 800){
+      if(endTime - startTime > 620){
         document.body.removeChild(aLink);
       }else{
         window.location = download_url;
@@ -50,6 +50,9 @@ function setTitle(title){
 
   window.addEventListener('DOMContentLoaded', function(){
     openclient()   // 自动打开app
+    document.getElementById('open_app').addEventListener('click', function(){
+      document.getElementById('open_app').href = open_app_url;
+    }, false)
     document.getElementById('down_app').addEventListener('click', function(){
       document.getElementById('down_app').href = download_url;
     }, false)
