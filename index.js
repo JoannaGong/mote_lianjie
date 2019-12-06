@@ -39,7 +39,8 @@ function setTitle(title){
       if(endTime - startTime > 800){
         document.body.removeChild(aLink);
       }else{
-        window.location = download_url;
+        // window.location = download_url;
+        // alert('hhh')
       }
     }, 600);
 
