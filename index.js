@@ -5,10 +5,7 @@ var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
 var open_app_url = 'wxe3e7c50449fde018://';
 var download_url;
 
-setTimeout(function(){
-  setTitle('艺约链接')
-}, 200);
-
+setTitle('艺约链接')
 
 function setTitle(title){
   document.title = title || document.title;
