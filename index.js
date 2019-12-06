@@ -9,37 +9,39 @@ setTitle('艺约链接')
 
 function setTitle(title){
   document.title = title || document.title;
-  var ua = navigator.userAgent.toLowerCase();
-  if(ua.match(/MicroMessenger/i)=="micromessenger" && !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/i)){
-      var ifr = document.createElement('iframe')
-      ifr.src = "/favicon.ico";
-      ifr.onload = function() {
-        setTimeout(function(){
-          ifr.remove();
-        }, 0)
-      }
-      document.body.appendChild(ifr);
+  var ifr = document.createElement('iframe')
+  ifr.src = "/favicon.ico";
+  ifr.onload = function() {
+    setTimeout(function(){
+      ifr.remove();
+    }, 0)
   }
+  document.body.appendChild(ifr);
 }
 
 
 (function(){
   function openclient(){
     var startTime = Date.now();
-    var ifr = document.createElement('iframe');
+    // var ifr = document.createElement('iframe');
 
-    ifr.src = open_app_url;
-    ifr.style.display = 'none';
-    document.body.appendChild(ifr);
+    // ifr.src = open_app_url;
+    // ifr.style.display = 'none';
+    // document.body.appendChild(ifr);
+
+    var aLink = document.createElement('a');
+    aLink.href = open_app_url;
+    document.body.appendChild(aLink);
+    aLink.click();
 
     var t = setTimeout(function(){
       var endTime = Date.now();
-      if(endTime - startTime > 1000){
-        document.body.removeChild(ifr);
+      if(endTime - startTime > 800){
+        document.body.removeChild(aLink);
       }else{
         window.location = open_app_url;
       }
-    }, 1000);
+    }, 600);
 
     window.onblur = function(){
       this.clearTimeout(t);
