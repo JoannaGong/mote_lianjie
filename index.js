@@ -53,6 +53,7 @@ function setTitle(title){
   window.addEventListener('DOMContentLoaded', function(){
     // openclient()   // 自动打开app
     document.getElementById('down_app').addEventListener('click', function(){
+      alert(download_url)
       document.getElementById('down_app').href = download_url;
     }, false)
   }, false)
