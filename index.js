@@ -51,10 +51,28 @@ function setTitle(title){
   }
 
   window.addEventListener('DOMContentLoaded', function(){
-    // openclient()   // 自动打开app
-    document.getElementById('down_app').addEventListener('click', function(){
-      document.getElementById('down_app').href = download_url;
-    }, false)
+    if(isWeibo){
+      document.getElementById('JweixinTip').style.display='block';
+      function weixinTip(ele){
+        ele.onclick=function(e){
+          window.event? window.event.returnValue = false : e.preventDefault();
+          document.getElementById('JweixinTip').style.display='block';
+        }
+        document.getElementById('JweixinTip').onclick=function(){
+          this.style.display='none';
+        }
+      }
+      var btn1 = document.getElementById('open_app'); //打开
+      weixinTip(btn1);
+      var btn2 = document.getElementById('down_app'); //下载
+      weixinTip(btn2);
+    }else{
+      openclient()   // 自动打开app
+      document.getElementById('down_app').addEventListener('click', function(){
+        document.getElementById('down_app').href = download_url;
+      }, false)
+    }
+    
   }, false)
 
 })()
